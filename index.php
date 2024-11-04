@@ -1,3 +1,8 @@
+<?php
+    require_once 'usuario.php';
+    $usuario = new Usuario();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,7 +14,7 @@
     <h2>CRUD - CREATE READ UPDATE DELETE</h2>
     <h3>Tela Login</h3>
 
-    <form action="areaprivada.php" method="POST">
+    <form method="POST">
         <label >Usuário:</label>
         <input type="email" name="email" placeholder="Digite seu E-mail"><br><br>
 
@@ -20,5 +25,55 @@
         <a href="cadastro.php">Cadastre-se</a>
     </form>
 
+<?php
+
+    if(isset($_POST['email']))
+    {
+        $email = addslashes($_POST['email']);
+        $senha = addslashes($_POST['senha']);
+
+        if(!empty($email) && !empty($senha))
+        {
+            $usuario->conectar("cadastroturma32", "localhost", "root", "");
+            if($usuario->msgErro == "")
+            {
+                if($usuario->logar($email, $senha))
+                {
+                    header("location: areaprivada.php");
+                }else{
+                    ?>
+                        <div id="msn-sucesso">
+                            Email ou Senha incorreto
+                            Clieque <a href="index.php">aqui</a> para logar
+                        </div>
+                        
+                    <?php
+                }
+    
+            }else{
+
+                ?>
+                <div id="msn-sucesso">
+                    <?php echo "Erro: ".$usuario->$msgErro ?>
+                    Clieque <a href="index.php">aqui</a> para logar
+                </div>
+                
+                <?php
+            }
+        }else{
+
+            ?>
+            <div id="msn-sucesso">
+                Preencha todos os campos
+                Clieque <a href="index.php">aqui</a> para logar
+            </div>
+            
+            <?php
+        
+        }
+
+    }
+
+?>
 </body>
 </html>

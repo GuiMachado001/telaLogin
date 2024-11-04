@@ -27,7 +27,7 @@
         <input type="password" name="senha" placeholder="Digite sua senha"><br><br>
 
         <label for="">Confirmar Senha:</label>
-        <input type="text" name="confSenha" placeholder="Confirme sua senha"><br><br>
+        <input type="password" name="confSenha" placeholder="Confirme sua senha"><br><br>
         
         <input type="submit" value="CADASTRAR"><br><br>
         
