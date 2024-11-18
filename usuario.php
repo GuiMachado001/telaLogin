@@ -52,6 +52,28 @@
                 return false;
             }
         }
+
+        public function getUsuario (){
+            global $pdo;
+            try{
+                $sql = $pdo->prepare("SELECT * FROM usuario");
+                $sql->execute();
+                return $sql->fetchAll(PDO::FETCH_ASSOC);
+            }catch (PDOException $e){
+                $this->msgErro = "Erro na consulta: " . $e->getMessage();
+                return [];
+            }
+        }
+
+        public function update($id_usuario, $nome, $email, $senha){
+            try{
+                $atualizarUsuario = $pdo->prepare("UPDATE usuario SET nome = :n, email = :e WHERE id_usuario = :idu");
+                $atualizarUsuario->bindValue(":idu", $id_usuario);
+                $atualizarUsuario->bindValue(":n", $nome);
+                $atualizarUsuario->bindValue(":e", $email);
+                
+            }
+        }
     }
 
 

@@ -22,7 +22,8 @@
         <input type="password" name="senha" placeholder="Digite sua Senha"><br><br>
 
         <input type="submit" value="logar"><br><br>
-        <a href="cadastro.php">Cadastre-se</a>
+        <a href="cadastro.php">Cadastre-se</a><br><br>
+        <a href="getUsuario.php">Usuarios</a>
     </form>
 
 <?php
