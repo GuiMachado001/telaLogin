@@ -64,16 +64,6 @@
                 return [];
             }
         }
-
-        public function update($id_usuario, $nome, $email, $senha){
-            try{
-                $atualizarUsuario = $pdo->prepare("UPDATE usuario SET nome = :n, email = :e WHERE id_usuario = :idu");
-                $atualizarUsuario->bindValue(":idu", $id_usuario);
-                $atualizarUsuario->bindValue(":n", $nome);
-                $atualizarUsuario->bindValue(":e", $email);
-                
-            }
-        }
     }
 
 
