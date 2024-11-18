@@ -64,6 +64,14 @@
                 return [];
             }
         }
+
+        public function getUsuarioId($id_usuario){
+            $sql = $pdo->prepare("SELECT * FROM usuario WHERE id_usuario = $id_usuario");
+            $sql->execute();
+            return $sql->fetch(PDO::FETCH_ASSOC);
+        }
+
+        
     }
 
 

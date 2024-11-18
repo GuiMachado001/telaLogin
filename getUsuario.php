@@ -38,9 +38,33 @@
             <td><?php echo $usuario['nome']; ?></td>
             <td><?php echo $usuario['telefone']; ?></td>
             <td><?php echo $usuario['email']; ?></td>
+            <td>
+                <a href="editar.php?id_usuario=<?php echo $usuario['id_usuario']; ?>">
+                    <button>Editar</button>
+                </a>
+            </td>
         </tr>
 
         <?php endforeach ?>
     </table>
+
+    <!-- <?php
+        $idUsuario = $_GET['id_usuario'];
+            
+            if($usuario->editarUsuario())
+            {
+                header("location: editar.php");
+            }else{
+            ?>
+            <div id="msn-sucesso">
+                Erro
+                Clieque <a href="index.php">aqui</a> para logar
+            </div>
+            
+        <?php
+    }
+
+
+    ?> -->
 </body>
 </html>
