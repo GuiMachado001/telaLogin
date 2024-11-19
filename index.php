@@ -9,22 +9,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela Login</title>
+
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <h2>CRUD - CREATE READ UPDATE DELETE</h2>
-    <h3>Tela Login</h3>
+    <div class="containerGeral">
 
-    <form method="POST">
-        <label >Usuário:</label>
-        <input type="email" name="email" placeholder="Digite seu E-mail"><br><br>
+        <div class="containerTitle">
+            <h2>CRUD - CREATE READ UPDATE DELETE</h2>
+            <h3>Tela Login</h3>
+        </div>
+        
+        <div class="containerForm">
+            <form method="POST">
+                <div class="containerEmail">
+                    <label >Usuário:</label>
+                    <input type="email" name="email" placeholder="Digite seu E-mail"><br><br>
+                </div>
+                
+                <div class="containerSenha">
+                    <label>Senha:</label>
+                    <input type="password" name="senha" placeholder="Digite sua Senha"><br><br>
+                </div>
+                
+                <div class="containerBtn">
+                    <a href="cadastro.php">Cadastre-se</a><br><br>
+                    <a href="getUsuario.php">Usuarios</a>
+                    <input type="submit" value="logar"><br><br>
+                </div>
+            </form>
+        </div>
 
-        <label>Senha:</label>
-        <input type="password" name="senha" placeholder="Digite sua Senha"><br><br>
-
-        <input type="submit" value="logar"><br><br>
-        <a href="cadastro.php">Cadastre-se</a><br><br>
-        <a href="getUsuario.php">Usuarios</a>
-    </form>
+    </div>
 
 <?php
 

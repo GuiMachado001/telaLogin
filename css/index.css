@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;   
+}
+
+:root{
+    --colorLetras1: #fff;
+
+    --colorBorder1: rgb(167, 1, 1);
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #18181b;
+}
+
+.containerGeral{
+    width: 80%;
+    height: 90vh;
+
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.1px);
+    -webkit-backdrop-filter: blur(7.1px);
+    border: 1px solid rgba(255, 255, 255, 0.19);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.containerTitle{
+    width: 50%;
+    height: 100%;
+    border: 1px solid red;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.containerForm{
+    width: 50%;
+    height: 100%;
+    border: 1px solid blue;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.containerForm > form {
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.containerEmail,
+.containerSenha{
+    width: 60%;
+    height: 60px;
+
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 30px;
+}
+.containerEmail label,
+.containerSenha label{
+    font-size: 25px;
+    color: var(--colorLetras1);
+}
+
+.containerEmail input,
+.containerSenha input{
+    width: 100%;
+    font-size: 15px;
+
+    border: 2px solid var(--colorBorder1);
+    border-radius: 50px;
+    padding: 4px;
+    font-weight: 600;
+    color: black;
+}
+
+.containerBtn{
+    width: 60%;
+    height: 60px;
+    border: 1px solid rgb(94, 1, 1);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    margin-bottom: 30px;
+}
+.containerBtn input{
+    width: 100px;
+    height: 30px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+.containerBtn a{
+    font-size: 15px;
+    text-decoration: none;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    color: var(--colorLetras1);
+}
