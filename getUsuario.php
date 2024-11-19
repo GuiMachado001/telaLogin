@@ -6,7 +6,14 @@
 
     $usuario->conectar("cadastroturma32", "localhost", "root", "");
 
-    $usuario = $usuario->getUsuario();
+    if (isset($_GET['id_usuario'])) {
+        $id_usuario = $_GET['id_usuario'];
+        $dados_usuario = $usuario->getUsuarioId($id_usuario);
+    } else {
+        // Redireciona para a lista de usuários se o id_usuario não estiver presente na URL
+        header('Location: index.php');
+        exit;
+    }
 ?>
 
 

@@ -65,13 +65,24 @@
             }
         }
 
-        public function getUsuarioId($id_usuario){
-            $sql = $pdo->prepare("SELECT * FROM usuario WHERE id_usuario = $id_usuario");
+        public function getUsuarioId($id_usuario) {
+
+            $sql = $pdo->prepare("SELECT * FROM usuario WHERE id_usuario = :idu");
+            $sql->bindParam(':idu', $id_usuario);
             $sql->execute();
-            return $sql->fetch(PDO::FETCH_ASSOC);
+            return $sql->fetch(PDO::FETCH_ASSOC); // Retorna os dados do usuário
         }
 
-        
+        public function editarUsuario($id_usuario, $nome, $telefone, $email) {
+
+            $sql = $pdo->prepare("UPDATE usuario SET nome = :n, telefone = :t, email = :e WHERE id_usuario = :idu");
+            $sql->bindParam(':idu', $id_usuario);
+            $sql->bindParam(':n', $nome);
+            $sql->bindParam(':t', $telefone);
+            $sql->bindParam(':e', $email);
+            return $sql->execute(); // Executa a atualização
+        }
+    
     }
 
 
