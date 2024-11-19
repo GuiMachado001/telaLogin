@@ -6,13 +6,21 @@
 
     $usuario->conectar("cadastroturma32", "localhost", "root", "");
 
+
     if (isset($_GET['id_usuario'])) {
         $id_usuario = $_GET['id_usuario'];
-        $dados_usuario = $usuario->getUsuarioId($id_usuario);
+        $dados_usuario = $usuario->getUsuarioId($id_usuario); 
     } else {
-        // Redireciona para a lista de usuários se o id_usuario não estiver presente na URL
-        header('Location: index.php');
-        exit;
+        $dados_usuario = $usuario->getUsuario();
+    }
+
+
+    if (isset($_POST['excluir_id'])) {
+        $id_usuario_excluir = $_POST['excluir_id']; 
+        if ($usuario->excluirUsuario($id_usuario_excluir)) {
+            echo "<p>Usuário excluído com sucesso.</p>";
+            exit;
+        }
     }
 ?>
 
@@ -38,7 +46,7 @@
             <th>Ações</th>
         </tr>
 
-        <?php foreach($usuario as $usuario): ?>
+        <?php foreach($dados_usuario as $usuario): ?>
 
         <tr>
             <td><?php echo $usuario['id_usuario']; ?></td>
@@ -50,28 +58,22 @@
                     <button>Editar</button>
                 </a>
             </td>
+
+
+            <td>
+                <form method="POST" action="">
+                    <input type="hidden" name="excluir_id" value="<?php echo $usuario['id_usuario']; ?>">
+                    <input type="submit" value="Excluir">
+                </form>
+            </td>
+
         </tr>
 
-        <?php endforeach ?>
+        <?php endforeach; ?>
     </table>
 
-    <!-- <?php
-        $idUsuario = $_GET['id_usuario'];
-            
-            if($usuario->editarUsuario())
-            {
-                header("location: editar.php");
-            }else{
-            ?>
-            <div id="msn-sucesso">
-                Erro
-                Clieque <a href="index.php">aqui</a> para logar
-            </div>
-            
-        <?php
-    }
+    <?php
 
-
-    ?> -->
+    ?>
 </body>
 </html>

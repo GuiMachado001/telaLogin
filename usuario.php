@@ -53,34 +53,44 @@
             }
         }
 
-        public function getUsuario (){
+        public function getUsuario() {
             global $pdo;
-            try{
+            try {
                 $sql = $pdo->prepare("SELECT * FROM usuario");
                 $sql->execute();
-                return $sql->fetchAll(PDO::FETCH_ASSOC);
-            }catch (PDOException $e){
-                $this->msgErro = "Erro na consulta: " . $e->getMessage();
-                return [];
+                return $sql->fetchAll(PDO::FETCH_ASSOC); 
+            } catch (PDOException $e) {
+                $msgErro = "Erro na consulta: " . $e->getMessage();
+                return []; 
             }
         }
 
         public function getUsuarioId($id_usuario) {
+            global $pdo;
 
             $sql = $pdo->prepare("SELECT * FROM usuario WHERE id_usuario = :idu");
-            $sql->bindParam(':idu', $id_usuario);
+            $sql->bindValue(':idu', $id_usuario);
             $sql->execute();
-            return $sql->fetch(PDO::FETCH_ASSOC); // Retorna os dados do usuário
+            return $sql->fetch(PDO::FETCH_ASSOC); 
         }
 
         public function editarUsuario($id_usuario, $nome, $telefone, $email) {
+            global $pdo;
 
             $sql = $pdo->prepare("UPDATE usuario SET nome = :n, telefone = :t, email = :e WHERE id_usuario = :idu");
-            $sql->bindParam(':idu', $id_usuario);
-            $sql->bindParam(':n', $nome);
-            $sql->bindParam(':t', $telefone);
-            $sql->bindParam(':e', $email);
-            return $sql->execute(); // Executa a atualização
+            $sql->bindValue(":idu", $id_usuario);
+            $sql->bindValue(":n", $nome);
+            $sql->bindValue(":t", $telefone);
+            $sql->bindValue(":e", $email);
+            $sql->execute(); 
+        }
+
+        public function excluirUsuario($id_usuario){
+            global $pdo;
+
+            $sql = $pdo->prepare("DELETE usuario FROM usuario WHERE id_usuario = :idu");
+            $sql->bindValue("idu", $id_usuario);
+            $sql->execute();
         }
     
     }

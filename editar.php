@@ -1,19 +1,26 @@
 <?php
-require_once 'usuario.php';
+    require_once 'usuario.php';
 
-$usuario = new Usuario;
-$usuario->conectar("cadastroturma32", "localhost", "root", "");
+    $usuario = new Usuario;
+    $usuario->conectar("cadastroturma32", "localhost", "root", "");
 
-// Verifica se o parâmetro 'id_usuario' está presente na URL
-if (isset($_GET['id_usuario']) && !empty($_GET['id_usuario'])) {
-    // Se o id_usuario estiver na URL, captura o valor e busca o usuário
-    $id_usuario = $_GET['id_usuario'];
-    $dados_usuario = $usuario->getUsuarioId($id_usuario);
-} else {
-    // Caso o parâmetro não exista ou esteja vazio, redireciona para a lista
-    header('Location: index.php');
-    exit;
-}
+
+    if (isset($_GET['id_usuario']) && !empty($_GET['id_usuario'])) {
+        $id_usuario = $_GET['id_usuario'];
+        $dados_usuario = $usuario->getUsuarioId($id_usuario);
+    } else {
+        header('Location: index.php');
+        exit;
+    }
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $id_usuario = $_POST['id_usuario'];
+        $nome = $_POST['nome'];
+        $telefone = $_POST['telefone'];
+        $email = $_POST['email'];
+    
+        $usuario->editarUsuario($id_usuario, $nome, $telefone, $email);
+    }
 ?>
 
 
@@ -42,6 +49,6 @@ if (isset($_GET['id_usuario']) && !empty($_GET['id_usuario'])) {
     <button type="submit">Salvar alterações</button>
 </form>
 
-    <a href="index.php">Voltar para a lista</a>
+    <a href="getUsuario.php">Voltar</a>
 </body>
 </html>
