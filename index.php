@@ -16,8 +16,8 @@
     <div class="containerGeral">
 
         <div class="containerTitle">
-            <h2>CRUD - CREATE READ UPDATE DELETE</h2>
-            <h3>Tela Login</h3>
+            <h2 class="titleCrud">CRUD - CREATE READ UPDATE DELETE</h2>
+            <h3 class="titleTela">Tela Login</h3>
         </div>
         
         <div class="containerForm">
