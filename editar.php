@@ -30,24 +30,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Usuário</title>
+    <link rel="stylesheet" href="css/editarUser.css">
+
 </head>
 <body>
-    <h1>Editar Usuário</h1>
+    <div class="containerGeral">
 
-    <form method="POST">
-    <input type="hidden" name="id_usuario" value="<?php echo $dados_usuario['id_usuario']; ?>">
+    <div class="containerTitle">
+        <h1>Editar Usuário</h1>
+    </div>
+
     
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" name="nome" value="<?php echo $dados_usuario['nome']; ?>" required><br><br>
+        
+        <form method="POST">
 
-    <label for="telefone">Telefone:</label>
-    <input type="text" id="telefone" name="telefone" value="<?php echo $dados_usuario['telefone']; ?>" required><br><br>
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" value="<?php echo $dados_usuario['email']; ?>" required><br><br>
-
-    <button type="submit">Salvar alterações</button>
-</form>
+            <input type="hidden" name="id_usuario" value="<?php echo $dados_usuario['id_usuario']; ?>">
+            
+            <div class="containerConteudo">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" value="<?php echo $dados_usuario['nome']; ?>" required><br><br>
+            </div>
+            
+            <div class="containerConteudo">
+                <label for="telefone">Telefone:</label>
+                <input type="text" id="telefone" name="telefone" value="<?php echo $dados_usuario['telefone']; ?>" required><br><br>
+            </div>
+            
+            <div class="containerConteudo">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="<?php echo $dados_usuario['email']; ?>" required><br><br>
+            </div>
+                
+            <div class="containerBtn">
+                <button type="submit">Salvar alterações</button>
+            </div>
+        </form>
+    </div>
 
     <a href="getUsuario.php">Voltar</a>
 </body>
