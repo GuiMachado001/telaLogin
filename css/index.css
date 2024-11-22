@@ -41,17 +41,17 @@ body{
 .containerTitle{
     width: 50%;
     height: 100%;
-    border: 1px solid red;
 
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 .containerForm{
     width: 50%;
     height: 100%;
-    border: 1px solid blue;
 
     display: flex;
     align-items: center;
@@ -99,7 +99,6 @@ body{
 .containerBtn{
     width: 60%;
     height: 60px;
-    border: 1px solid rgb(94, 1, 1);
 
     display: flex;
     align-items: center;
@@ -123,7 +122,17 @@ body{
     cursor: pointer;
     color: var(--colorLetras1);
 }
+.containerBtn{
+    width: 60%;
+    height: 60px;
 
+    display: flex;
+    align-items: center;
+}
 .titleCrud{
-    color: var(--colorBorder1);
+    color: var(--colorLetras1);
+}
+.titleTela{
+    color: var(--colorLetras1);
+    font-size: 20px;
 }

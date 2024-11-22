@@ -34,10 +34,10 @@
                 
                 <div class="containerBtn">
                     <a href="cadastro.php">Cadastre-se</a><br><br>
-                    <a href="getUsuario.php">Usuarios</a>
                     <input type="submit" value="logar"><br><br>
                 </div>
             </form>
+            
         </div>
 
     </div>

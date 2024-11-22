@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #18181b;
+}
+
+.containerGeral{
+    width: 90%;
+    height: 80vh;
+
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.1px);
+    -webkit-backdrop-filter: blur(7.1px);
+    border: 1px solid rgba(255, 255, 255, 0.19);
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.containerTitle{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid red;
+}
+
+table{
+    width: 90%;
+    margin-top: 20px;
+}
+
+.containerTop{
+    background-color: rgb(35, 155, 253);
+    border: 1px solid black;
+
+}
+.containerBtn{
+    width: 90%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.containerConteudo{
+    background-color: rgb(167, 215, 255);
+}
+
+
+.btnVoltar{
+    width: 100px;
+    height: 30px;
+
+    margin-top: 20px;
+
+    background-color: rgb(167, 215, 255);
+    font-size: 15px;
+    text-decoration: none;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+.btnCadastrar{
+    height: 30px;
+
+    margin-top: 20px;
+
+    background-color: rgb(167, 215, 255);
+    font-size: 15px;
+    text-decoration: none;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+}
