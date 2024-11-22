@@ -3,3 +3,118 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body{
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #18181b;
+
+    flex-direction: column;
+
+}
+
+.containerGeral{
+    width: 90%;
+    height: 80vh;
+
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.1px);
+    -webkit-backdrop-filter: blur(7.1px);
+    border: 1px solid rgba(255, 255, 255, 0.19);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+label{
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+}
+
+form{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.containerDados{
+    width: 60%;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+input {
+    width: 100%;
+    font-size: 15px;
+
+    border: 2px solid var(--colorBorder1);
+    border-radius: 50px;
+    padding: 4px;
+    font-weight: 600;
+    color: black;
+}
+
+.containerBtn{
+    width: 60%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+
+}
+.cadastrar{
+    width: 110px;
+    height: 30px;
+
+    margin-top: 20px;
+
+    background-color: rgb(167, 215, 255);
+    font-size: 15px;
+    text-decoration: none;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+}
+.voltar{
+    width: 100px;
+    height: 30px;
+
+    margin-top: 20px;
+
+    background-color: rgb(167, 215, 255);
+    font-size: 15px;
+    text-decoration: none;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-weight: 600;
+}
+
+#msn-sucesso{
+    color: white;
+}

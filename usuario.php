@@ -72,6 +72,7 @@
             $sql->bindValue(':idu', $id_usuario);
             $sql->execute();
             return $sql->fetch(PDO::FETCH_ASSOC); 
+            header("Refresh: 0");
         }
 
         public function editarUsuario($id_usuario, $nome, $telefone, $email) {
@@ -83,6 +84,7 @@
             $sql->bindValue(":t", $telefone);
             $sql->bindValue(":e", $email);
             $sql->execute(); 
+            header("Refresh: 0");
         }
 
         public function excluirUsuario($id_usuario){
@@ -91,6 +93,7 @@
             $sql = $pdo->prepare("DELETE usuario FROM usuario WHERE id_usuario = :idu");
             $sql->bindValue("idu", $id_usuario);
             $sql->execute();
+            header("Refresh: 0");
         }
     
     }

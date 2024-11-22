@@ -14,7 +14,9 @@ body{
     flex-direction: column;
     background-color: #18181b;
 }
-
+.title{
+    color: white;
+}
 .containerGeral{
     width: 90%;
     height: 80vh;
@@ -37,7 +39,9 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid red;
+}
+.containerTitle h1{
+    color: white;
 }
 
 table{
@@ -87,4 +91,8 @@ table{
     border-radius: 50px;
     border: none;
     cursor: pointer;
+}
+a{
+    text-decoration: none;
+    text-align: center;
 }

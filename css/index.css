@@ -136,3 +136,7 @@ body{
     color: var(--colorLetras1);
     font-size: 20px;
 }
+
+#msn-sucesso{
+    color: white;
+}

@@ -14,28 +14,43 @@
 
 </head>
 <body>
-    <h2>CADASTRO DE USUÁRIO</h2>
+    <div class="containerGeral">
 
-    <form action="" method="POST">
-        <label for="">Nome:</label>
-        <input type="text" name="nome" placeholder="Digite seu nome"><br><br>
-
-        <label for="">Telefone:</label>
-        <input type="tel" name="tel" placeholder="Digite seu telefone"><br><br>
-
-        <label for="">E-mail:</label>
-        <input type="email" name="email" placeholder="Digite seu E-mail"><br><br>
-
-        <label for="">Senha:</label>
-        <input type="password" name="senha" placeholder="Digite sua senha"><br><br>
-
-        <label for="">Confirmar Senha:</label>
-        <input type="password" name="confSenha" placeholder="Confirme sua senha"><br><br>
+        <h2 class="title">CADASTRO DE USUÁRIO</h2>
         
-        <input type="submit" value="CADASTRAR"><br><br>
-        
-        <a href="index.php">Voltar</a>
-    </form>
+        <form action="" method="POST">
+
+            <div class="containerDados containerNome">
+                <label for="">Nome:</label>
+                <input type="text" name="nome" placeholder="Digite seu nome"><br><br>
+            </div>
+            
+            <div class="containerDados containerTelefone">
+                <label for="">Telefone:</label>
+                <input type="tel" name="tel" placeholder="Digite seu telefone"><br><br>
+            </div>
+            
+            <div class="containerDados containerEmail">
+                <label for="">E-mail:</label>
+                <input type="email" name="email" placeholder="Digite seu E-mail"><br><br>
+            </div>
+            
+            <div class="containerDados containerSenha">
+                <label for="">Senha:</label>
+                <input type="password" name="senha" placeholder="Digite sua senha"><br><br>
+            </div>
+
+            <div class="containerDados containerConfSenha">
+                <label for="">Confirmar Senha:</label>
+                <input type="password" name="confSenha" placeholder="Confirme sua senha"><br><br>
+            </div>
+            
+            <div class="containerBtn">
+                <a href="index.php" class="voltar">Voltar</a>
+                <input type="submit" value="CADASTRAR" class="cadastrar"><br><br>
+            </div>
+        </form>
+    </div>
 
 <?php
     if(isset($_POST['nome']))
